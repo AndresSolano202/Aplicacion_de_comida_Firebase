@@ -21,7 +21,8 @@ export class HomePage {
     precio: '',
     nombre_P: '',
     calificacion: '',
-    id: ''
+    id: '',
+    calorias: ''
   };
 
 
@@ -61,7 +62,9 @@ export class HomePage {
     this.newPersona.id="";
     this.newPersona.precio="";
     this.newPersona.nombre_P="";
+    this.newPersona.calorias="";
     this.newPersona.calificacion="";
+   
     }
   }
 

@@ -1,42 +1,63 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Registro
+      Menu "Delicias Don Solano"
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="background">
+
+
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Registro</ion-title>
     </ion-toolbar>
   </ion-header>
 
-<ion-list class="list-formulario">
+
+  <br><br>
+
+  <div style="padding-left: 10%; padding-right: 10%;">
+
+<ion-list class="list-formulario" >
+  
   <ion-item>
     <ion-input type="text" placeholder="Nombre del plato" [(ngModel)]="newPersona.nombre_P"></ion-input>
   </ion-item>
+  <br>
   <ion-item>
     <ion-input type="text" placeholder="Precio del plato" [(ngModel)]="newPersona.precio"></ion-input>
   </ion-item>
+  <br>
+  <ion-item>
+    <ion-input type="text" placeholder="Calorias del plato" [(ngModel)]="newPersona.calorias"></ion-input>
+  </ion-item>
+  <br>
   <ion-item>
     <ion-input type="text" placeholder="Calificacion del plato" [(ngModel)]="newPersona.calificacion"></ion-input>
   </ion-item>
+  <br>
   </ion-list>
-<ion-list>
-  <ion-item *ngFor="let p of Personas" >
+<ion-list >
+  <ion-item *ngFor="let p of Personas"  >
     <ion-label>{{p.nombre_P}}</ion-label>
     <ion-label>{{p.precio}}</ion-label>
+    <ion-label>{{p.calorias}}</ion-label>
     <ion-label>{{p.calificacion}}</ion-label>
     <ion-button (click)="delete(p)" color="danger" >
       <ion-icon slot="icon-only" name="close-circle-outline" ></ion-icon>
     </ion-button>
   </ion-item>
 </ion-list>
+
+</div>
+
 <ion-fab vertical="bottom" horizontal="end" >
 <ion-fab-button (click)="save()" size="small" color="success">
   <ion-icon name="add-circle-outline"></ion-icon>
 </ion-fab-button>
 </ion-fab>
+
+
 </ion-content>
