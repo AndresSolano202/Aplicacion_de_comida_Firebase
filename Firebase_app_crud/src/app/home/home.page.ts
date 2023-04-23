@@ -6,6 +6,8 @@ import { FormsModule } from '@angular/forms';
 import { ToastService } from 'src/Services/toast.service';
 import { LoadingService } from 'src/Services/loading.service';
 import { CommonModule } from '@angular/common';
+import { FirestorageService } from 'src/Services/firestorage.service';
+
 
 @Component({
   selector: 'app-home',
@@ -22,13 +24,14 @@ export class HomePage {
     nombre_P: '',
     calificacion: '',
     id: '',
-    calorias: ''
+    calorias: '',
+    foto: ''
+    
   };
 
 
-
-  constructor(private bd:BdService, private toast:ToastService, private load:LoadingService) {
-  }
+  newI = '';
+  constructor(private bd:BdService, private toast:ToastService, private load:LoadingService ) {}
   ngOnInit() {
     this.bd.get<Item>(this.enlace).subscribe(p=>{
       this.Personas=p;
@@ -66,6 +69,26 @@ export class HomePage {
     this.newPersona.calificacion="";
    
     }
+
+    newImage(event: any)
+    {
+      if (event.target.files && event.target.files[0])
+        {
+          const reader = new FileReader();
+          reader.onload = ((image) =>{
+            this.newI = image.target?.result as string;
+
+          });
+          reader.readAsDataURL(event.target.files[0])
+ 
+        }
+    }
+
+
+
   }
 
+  
+
+  
 

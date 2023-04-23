@@ -4,6 +4,7 @@ export interface Item{
   nombre_P:string;
   calorias:string;
   calificacion:string;
+  foto:string;
   
 }
 
