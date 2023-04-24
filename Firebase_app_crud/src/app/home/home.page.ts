@@ -67,6 +67,7 @@ export class HomePage {
     this.newPersona.nombre_P="";
     this.newPersona.calorias="";
     this.newPersona.calificacion="";
+    this.newPersona.foto="";
    
     }
 

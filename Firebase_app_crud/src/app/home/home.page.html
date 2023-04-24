@@ -61,11 +61,16 @@
       <label for="file-uploap">
         <ion-icon slot="icon-only" name="images" style="height: 80px; width: 30px; color: white;"></ion-icon>
       </label>
-      <input (change)="newImage($event)" id="file-uploap" style="display: none ;" type="file" accept="images/jpeg">
+      <input (change)="newImage($event)" id="file-uploap" style="display: none ;" type="file" accept="images/jpeg" [(ngModel)]="newPersona.foto">
     </ion-button>
-    <img [src]="newI">
+   
+    
   </ion-item>
 
+  <ion-item style="text-align: center;">
+    <img [src]="newI" style="width: 100px; height: auto; ">
+
+  </ion-item>
   
 
   </ion-list>
@@ -77,10 +82,12 @@
     <ion-label>{{p.precio}}</ion-label>
     <ion-label>{{p.calorias}}</ion-label>
     <ion-label>{{p.calificacion}}</ion-label>
+    <ion-label>{{p.foto}}</ion-label>
     <ion-button (click)="delete(p)" color="danger" >
       <ion-icon slot="icon-only" name="close-circle-outline" ></ion-icon>
     </ion-button>
   </ion-item>
+  
 </ion-list>
 
 </div>
