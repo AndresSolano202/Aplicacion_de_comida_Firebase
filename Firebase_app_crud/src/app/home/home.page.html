@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="primary">
+  <ion-toolbar color="dark">
     <ion-title>
       Menu "Delicias Don Solano"
     </ion-title>
@@ -18,7 +18,7 @@
 
   <br><br>
 
-  <div style="padding-left: 2%; padding-right: 2%;">
+  <div style="padding-left: 2%; padding-right: 2%; background-color: black;" >
 
 <ion-list class="list-formulario" >
   
@@ -31,7 +31,7 @@
   </ion-item>
   <br>
   <ion-item>
-    <ion-input type="text" placeholder="Calorias del producto" [(ngModel)]="newPersona.calorias"></ion-input>
+    <ion-input type="text" placeholder="Calorias del" [(ngModel)]="newPersona.calorias"></ion-input>
   </ion-item>
   <br>
   <ion-item>
@@ -64,6 +64,8 @@
       <input (change)="newImage($event)" id="file-uploap" style="display: none ;" type="file" accept="images/jpeg" [(ngModel)]="newPersona.foto">
     </ion-button>
    
+    <ion-input type="text"  [(ngModel)]="newPersona.foto" label="URL" label-placement="floating" 
+      fill="solid" type="text" placeholder="Enter Text" ></ion-input>
     
   </ion-item>
 
@@ -77,20 +79,29 @@
 
 
 <ion-list >
-  <ion-item *ngFor="let p of Personas"  >
-    <ion-label>{{p.nombre_P}}</ion-label>
-    <ion-label>{{p.precio}}</ion-label>
-    <ion-label>{{p.calorias}}</ion-label>
-    <ion-label>{{p.calificacion}}</ion-label>
-    <ion-label>{{p.foto}}</ion-label>
+  <ion-item *ngFor="let p of Personas" >
+    <ion-card style="background-color: black;">
+      <img alt="{{p.foto}}" src="{{p.foto}}" style="width: 100%;">
+    
+    <ion-label><h1 style="color: white;">&nbsp;{{p.nombre_P}}</h1></ion-label>
+    <ion-label style="color: white;">&nbsp;&nbsp;{{p.precio}} $</ion-label>
+    <ion-label style="color: white;">&nbsp;&nbsp;{{p.calorias}}</ion-label>
+    <ion-label style="color: white;">&nbsp;&nbsp;{{p.calificacion}}</ion-label>
+    <ion-label style="color: white;">&nbsp;&nbsp;{{p.foto}}</ion-label>
+    
     <ion-button (click)="delete(p)" color="danger" >
       <ion-icon slot="icon-only" name="close-circle-outline" ></ion-icon>
     </ion-button>
+  </ion-card>
   </ion-item>
+ 
+
   
 </ion-list>
 
 </div>
+
+<br><br><br>
 
 <ion-fab vertical="bottom" horizontal="end" >
 <ion-fab-button (click)="save()" size="small" color="success">
