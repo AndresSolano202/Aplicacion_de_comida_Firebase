@@ -31,7 +31,7 @@
   </ion-item>
   <br>
   <ion-item>
-    <ion-input type="text" placeholder="Calorias del" [(ngModel)]="newPersona.calorias"></ion-input>
+    <ion-input type="text" placeholder="Calorias del plato" [(ngModel)]="newPersona.calorias"></ion-input>
   </ion-item>
   <br>
   <ion-item>
@@ -64,7 +64,7 @@
       <input (change)="newImage($event)" id="file-uploap" style="display: none ;" type="file" accept="images/jpeg" [(ngModel)]="newPersona.foto">
     </ion-button>
    
-    <ion-input type="text"  [(ngModel)]="newPersona.foto" label="URL" label-placement="floating" 
+    <ion-input type="text"  [(ngModel)]="newPersona.foto" label="Ingrese la URL" label-placement="floating" 
       fill="solid" type="text" placeholder="Enter Text" ></ion-input>
     
   </ion-item>
@@ -80,8 +80,8 @@
 
 <ion-list >
   <ion-item *ngFor="let p of Personas" >
-    <ion-card style="background-color: black;">
-      <img alt="{{p.foto}}" src="{{p.foto}}" style="width: 100%;">
+    <ion-card style="background-color: black; width: 300px;">
+      <img alt="{{p.foto}}" src="{{p.foto}}" style="width: 100%; height: auto;">
     
     <ion-label><h1 style="color: white;">&nbsp;{{p.nombre_P}}</h1></ion-label>
     <ion-label style="color: white;">&nbsp;&nbsp;{{p.precio}} $</ion-label>
